@@ -1,8 +1,14 @@
 var twoSum = function(nums, target) {
     let map = new Map()
-    return nums.forEach((val, index)=>{
-        !map.get(val) && map.set(val,target-val)
-        if(map.get(target-val)) return [map.get(target-val), index]
-    })
-    
+    for(let i=0;i<nums.length;i++){
+        if(map.has(target - nums[i])){
+            return [i, map.get(target - nums[i])]
+        }
+        else{
+            map.set(nums[i], i)
+        }
+    }
 };
+
+
+console.log(twoSum([2,7,11,15], 9));
