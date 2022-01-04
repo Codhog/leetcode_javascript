@@ -3,12 +3,16 @@
  * @param {number} k
  * @return {number}
  */
+
+  // Native Sort Approach
+
 //  var findKthLargest = function(nums, k) {
 //     let arrnums =  Array.from(new Set(nums.sort((a,b)=>b-a)))
 //     console.log(arrnums);
 //     console.log(arrnums[k-1]);
 // };
 
+  // Quick Sort Approach
 var findKthLargest = function(nums, k) {
     console.log(quicksort(nums));
     return quicksort(nums)[k-1]
@@ -31,5 +35,8 @@ function quicksort(array) {
   return quicksort(right).concat(pivot, quicksort(left));
 };
 
-console.log(findKthLargest([3,2,1,5,6,4],2));
 
+
+// Heap Sort Approach in next file
+
+console.log(findKthLargest([3,2,1,5,6,4],2));
