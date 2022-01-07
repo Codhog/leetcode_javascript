@@ -1,18 +1,4 @@
-function counter(){
-    this.num = 1
-}
 
-
-
-const c1 = new counter()
-
-counter.prototype = {
-    'add': ()=>++this.num
-}
-
-
-console.log(c1.add);
-console.log(counter.prototype);
 // function person(name,qq){
 
 //     this.name = name;
@@ -33,3 +19,43 @@ console.log(counter.prototype);
 
 
 // p1.showname();
+
+// function model(state, input){
+//     Object.defineProperty(input, 'value', {
+//       get: ()=> state.value,
+//       set: (value) => state.value = value 
+//     })
+//   }
+  
+  
+//   const input = { input : Math.random()}
+//   const state = { value: 'asd' }
+//   model(state, input)
+  
+//   function model(state, input){
+//     Object.defineProperty(input, 'value', {
+//       get: ()=> state.value,
+//       set: (value) => {
+//           console.log(value);
+//       }
+//     })
+//   }
+  
+  
+  
+//   console.log(state.value) // 'BFE'
+
+class Person{
+    constructor(first, last){
+        this.name = first + ' ' +last
+    }
+    get fullname(){
+        return this.name
+    }
+}
+
+let p1 = new Person('Peter', 'Chen')
+
+p1.color = 'red'
+
+console.log(p1.color);
