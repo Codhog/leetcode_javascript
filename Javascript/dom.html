@@ -1,0 +1,18 @@
+<html>
+<script>
+    const throttle = (func, wait = 50) => {
+        let lastTime = 0
+        return function(...args){
+            console.log(args1);
+            let now = +new Date()
+
+            if(now - lastTime > wait){
+                lastTime = now
+                func.apply(this, args)
+            }
+        }
+    }
+
+    setInterval(throttle(()=>console.log(1), 500), 1)
+</script>
+</html>
