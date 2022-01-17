@@ -12,3 +12,10 @@ console.log(a.constructor === Array); // true
  console.log(a.car);
 a.car = 'bmw'
 console.log(a.car);
+
+var bar = function(){
+    return 2
+};
+var arr = [1,2]
+console.log(typeof bar === "function");
+console.log(typeof arr === "object");
