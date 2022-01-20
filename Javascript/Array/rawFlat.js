@@ -1,5 +1,5 @@
 // There are six ways to flatten an array 
-// 1. IterativeRecursive Method
+// 1. Recursive Method
 // function recursiveFlat(arr, depth = 1) {
 //   const res = []
 //   for (let val of arr) {
@@ -15,36 +15,34 @@
 // }
 
 
-// // 2. Iterative Method
+// // 2. Iterative Method I
 
-// const iterativeFlat = () => {
+const iterativeFlat = (arr, depth = 1) => {
+  const res = []
+  const queue = arr.slice() // deep clone
+  let flag = false
+  while(true){
+    while(queue.length){
+      const curr = queue.shift()
+      if(Array.isArray(curr)){
+        res.push(...curr)
+      }
+      else{
+        res.push(curr)
+      }
+    }
+    depth--
+    flag = res.some(val=>Array.isArray(val))// Prevent a flatten array with depth left to be flattened.
+    if(!depth || !flag){
+      return res
+    }
+    queue.push(...res)
+    res.length=0
+  }
+}
 
-// }
 
-// function flat(arr, depth = 1) {
-//   const res = []
-//   const queue = [...arr]
-//   let flag = true
-//   while (flag) {
-//     while (depth > 0) {
-//       const head = queue.shift()
-//       if (Array.isArray(head)) {
-//         res.push(...head)
-//       }
-//       else {
-//         res.push(head)
-//       }
-//       depth--
-//       console.log(depth)
-//       flag = queue.some((val) => Array.isArray(val))
-
-//     }
-//     if (flag || depth < 1) {
-//       return res
-//     }
-//   }
-// }
-
+// 3. Iterative Method II
 function bfsflat(arr, depth = 1) {
   // your imeplementation here
   const res = []

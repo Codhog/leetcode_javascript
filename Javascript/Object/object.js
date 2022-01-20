@@ -1,21 +1,7 @@
-let a = {
-    car: 'Volvo',
-    power: 4
-}
+//  Delete a property
+const key = 'a';
 
-// console.log(Object.getOwnPropertyDescriptors(obj));
-let b = [] 
-console.log(a.constructor === Array); // true 
+const { b, ...rest } = { a: 1, b: 2, c: 3 };
 
-
-// console.log(obj.hasOwnProperty('sa'));
- console.log(a.car);
-a.car = 'bmw'
-console.log(a.car);
-
-var bar = function(){
-    return 2
-};
-var arr = [1,2]
-console.log(typeof bar === "function");
-console.log(typeof arr === "object");
+// console.log(foo);  // 1
+console.log(rest,'asd'); // { b: 2, c: 3 }

@@ -7,5 +7,5 @@ var rotate = function(matrix) {
     }
     return matrix
 };
-rotate([[1,2,3],[4,5,6],[7,8,9]])
-// console.log(rotate([[1,2,3],[4,5,6],[7,8,9]]));
+// rotate([[1,2,3],[4,5,6],[7,8,9]])
+console.log(rotate([[1,2,3],[4,5,6],[7,8,9]]));
