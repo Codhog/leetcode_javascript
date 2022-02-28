@@ -1,61 +1,30 @@
+// Create a class called Person which accepts the name of a person as a string, and his/her age as a number.
 
-// function person(name,qq){
+// The Person class should have a method called describe which returns a string with the following syntax: "name, age years old".
+//  So for example, if John is 19 years old then the function describe of his object will return "John, 19 years old".
 
-//     this.name = name;
-
-//     this.qq = qq;
+// function Person(name, age){
+//     this.name = name
+//     this.age = age
+//     this.describe = function(){
+//         return `${this.name}, is ${this.age}`
+//     }
 
 // }
 
-// person.prototype.showname = function(){//这里showname即使方法的引用也是方法名，有点奇怪
-//     console.log("我的名字:"+this.name)
-
-// }     
-
-// var p1 = new person("张三",11111);
-
-// var p2 = new person("李四",22222);
-
-
-
-// p1.showname();
-
-// function model(state, input){
-//     Object.defineProperty(input, 'value', {
-//       get: ()=> state.value,
-//       set: (value) => state.value = value 
-//     })
-//   }
-  
-  
-//   const input = { input : Math.random()}
-//   const state = { value: 'asd' }
-//   model(state, input)
-  
-//   function model(state, input){
-//     Object.defineProperty(input, 'value', {
-//       get: ()=> state.value,
-//       set: (value) => {
-//           console.log(value);
-//       }
-//     })
-//   }
-  
-  
-  
-//   console.log(state.value) // 'BFE'
 
 class Person{
-    constructor(first, last){
-        this.name = first + ' ' +last
+    constructor(name, age){
+        this.name = name
+        this.age = age
     }
-    get fullname(){
-        return this.name
+    describe(){
+        return `${this.name}, is ${this.age}`
     }
 }
 
-let p1 = new Person('Peter', 'Chen')
+let Tom = new Person('Tome', 21)
 
-p1.color = 'red'
 
-console.log(p1.color);
+// console.log(Person._proto_);
+console.log(Tom.describe());
